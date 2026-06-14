@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: learning-test-3-ratelimit
+
+toss:
+  # 브라우저 위젯용 공개 문서 테스트 키. 서버 승인은 로컬 게이트웨이로 나가 secret-key 가 필요 없다.
+  client-key: test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm
+
+# 들어오는 요청의 Rate Limit 정책.
+rate-limit:
+  capacity: 5            # 허용 버스트
+  refill-per-second: 1.0 # 평균 TPS 상한
+
+# 게이트웨이가 429 를 주면 Retry-After 만큼 대기 후 재시도하는 백오프 정책.
+gateway:
+  base-url: http://localhost:8080
+  max-attempts: 3
+
+# 나가는 호출의 Rate Limit 정책.
+outbound-rate-limit:
+  capacity: 5            # 허용 버스트
+  refill-per-second: 1.0 # 평균 TPS 상한

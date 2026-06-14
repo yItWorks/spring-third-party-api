@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: learning-test-1-api-error
+
+toss:
+  base-url: https://api.tosspayments.com
+  # 공개 문서 테스트 키 쌍. client-key 는 브라우저 위젯용, secret-key 는 서버 승인용(같은 상점이어야 함).
+  client-key: test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm
+  secret-key: test_gsk_docs_OaPz8L5KdmQXkzRz3y47BMw6
